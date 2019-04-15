@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+  <html>
+     <head>
+        <title>Task 2</title>
+     </head> 
+            <script type="text/javascript">   
+        function get(){
+            var x1 = parseInt(document.getElementById("point1-x").value);
+            var y1 = parseInt(document.getElementById("point1-y").value);
+            var z1 = parseInt(document.getElementById("point1-z").value);
+            var x2 = parseInt(document.getElementById("point2-x").value);
+            var y2 = parseInt(document.getElementById("point2-y").value);
+            var z2 = parseInt(document.getElementById("point2-z").value);
+            var x3 = parseInt(document.getElementById("point3-x").value);
+            var y3 = parseInt(document.getElementById("point3-y").value);
+            var z3 = parseInt(document.getElementById("point3-z").value);           
+            var edge1 = Math.sqrt(Math.pow((x2-x1),2) + Math.pow((y2-y1),2) + Math.pow((z2-z1),2));
+            var edge2 = Math.sqrt(Math.pow((x3-x1),2) + Math.pow((y3-y1),2) + Math.pow((z3-z1),2));
+            var edge3 = Math.sqrt(Math.pow((x3-x2),2) + Math.pow((y3-y2),2) + Math.pow((z3-z2),2));
+            var p = ((edge1 + edge2 + edge3)/2); 
+            document.getElementById("area").value = Math.sqrt(p * (p - edge1) * (p - edge2) * (p - edge3));
+        }               
+             </script>   
+     <body>
+         <input type="text" id="point1-x" placeholder="point1-x"/>
+         <input type="text" id="point1-y" placeholder="point1-y"/>
+         <input type="text" id="point1-z" placeholder="point1-z"/>
+         <input type="text" id="point2-x" placeholder="point2-x"/>
+         <input type="text" id="point2-y" placeholder="point2-y"/>
+         <input type="text" id="point2-z" placeholder="point2-z"/>
+         <input type="text" id="point3-x" placeholder="point3-x"/>
+         <input type="text" id="point3-y" placeholder="point3-y"/>
+         <input type="text" id="point3-z" placeholder="point3-z"/>
+         <input type="button" value=" = " onclick="get()" />
+         <input type="text" id="area" placeholder="area" onclick="get()" /> 
+     </body> 
+   </html>
